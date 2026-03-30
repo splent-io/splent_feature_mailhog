@@ -1,12 +1,11 @@
 """
 Functional tests for splent_feature_mailhog.
 
-Functional tests use Flask's test client to exercise full HTTP
-request/response cycles (GET, POST, redirects, rendered HTML).
+This feature overrides mail's SMTP settings for local development
+via MailHog. It does not expose HTTP routes.
 """
 
 
-def test_index_is_reachable(test_client):
-    """Verify the feature index route exists (200 if public, 302 if login required)."""
-    response = test_client.get("/mailhog")
-    assert response.status_code in (200, 302)
+def test_placeholder():
+    """Remove this once you add real functional tests."""
+    assert True
