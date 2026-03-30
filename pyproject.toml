@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "splent_feature_mailhog"
+version = "1.0.0"
+readme = "README.md"
+requires-python = ">=3.13"
+
+dependencies = []
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["*.tests", "*.tests.*"]
+
+[tool.splent]
+cli_version = "1.3.0"
+
+[tool.splent.contract]
+description = "Mailhog SMTP trap for development — overrides mail SMTP settings"
+env = "dev"
+
+[tool.splent.contract.provides]
+routes     = []
+blueprints = ["mailhog_bp"]
+models     = []
+commands   = []
+hooks      = []
+services   = []
+signals    = []
+translations = []
+docker     = ["docker-compose.yml"]
+
+[tool.splent.contract.requires]
+features = ["mail"]
+env_vars = ["MAILHOG_HOST", "MAILHOG_SMTP_PORT"]
+signals  = []
+
+[tool.splent.contract.extensible]
+services  = []
+templates = []
+models    = []
+hooks     = []
+routes    = false

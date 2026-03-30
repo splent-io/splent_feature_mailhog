@@ -1,0 +1,1 @@
+# Mailhog has no models.

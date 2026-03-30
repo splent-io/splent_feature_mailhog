@@ -1,0 +1,14 @@
+services:
+
+  splent_feature_mailhog:
+    image: mailhog/mailhog:latest
+    restart: always
+    ports:
+      - "${MAILHOG_SMTP_HOST_PORT}:1025"
+      - "${MAILHOG_UI_HOST_PORT}:8025"
+    networks:
+      - splent_network
+
+networks:
+  splent_network:
+    external: true
