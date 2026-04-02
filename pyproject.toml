@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "splent_feature_mailhog"
-version = "1.0.4"
+version = "1.0.5"
 readme = "README.md"
 requires-python = ">=3.13"
 
@@ -28,7 +28,7 @@ description = "Mailhog SMTP trap for development — overrides mail SMTP setting
 
 [tool.splent.contract.provides]
 routes     = []
-blueprints = ["mailhog_bp"]
+blueprints = []
 models     = []
 commands   = []
 hooks      = []
@@ -44,7 +44,7 @@ signals  = []
 
 [tool.splent.contract.extensible]
 services  = []
-templates = []
+templates = ["mailhog/index.html"]
 models    = []
 hooks     = []
 routes    = false
