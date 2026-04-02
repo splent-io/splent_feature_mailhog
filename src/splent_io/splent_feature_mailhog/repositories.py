@@ -1,1 +1,0 @@
-# Mailhog has no repositories.

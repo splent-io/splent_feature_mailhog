@@ -1,1 +1,0 @@
-# Mailhog emits no signals.

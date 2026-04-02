@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "splent_feature_mailhog"
-version = "1.0.5"
+version = "1.0.6"
 readme = "README.md"
 requires-python = ">=3.13"
 
@@ -35,7 +35,7 @@ hooks      = []
 services   = []
 signals    = []
 translations = []
-docker     = []
+docker     = ["docker-compose.yml"]
 
 [tool.splent.contract.requires]
 features = []
@@ -44,7 +44,18 @@ signals  = []
 
 [tool.splent.contract.extensible]
 services  = []
-templates = ["mailhog/index.html"]
+templates = []
 models    = []
 hooks     = []
 routes    = false
+
+[tool.splent.contract.docker]
+services   = ["splent_feature_mailhog"]
+ports      = ["${MAILHOG_SMTP_HOST_PORT}:1025", "${MAILHOG_UI_HOST_PORT}:8025"]
+volumes    = []
+networks   = ["splent_network"]
+build      = false
+healthcheck = false
+
+[tool.splent.contract.docker.depends_on]
+services = []
