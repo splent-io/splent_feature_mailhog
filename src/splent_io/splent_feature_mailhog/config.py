@@ -19,5 +19,6 @@ def inject_config(app):
             "MAIL_USERNAME": "",
             "MAIL_PASSWORD": "",
             "MAIL_DEFAULT_SENDER": os.getenv("MAIL_DEFAULT_SENDER", "dev@splent.local"),
+            "MAILHOG_UI_HOST_PORT": os.getenv("MAILHOG_UI_HOST_PORT", "8025"),
         }
     )

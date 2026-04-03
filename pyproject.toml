@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "splent_feature_mailhog"
-version = "1.0.6"
+version = "1.0.7"
 readme = "README.md"
 requires-python = ">=3.13"
 
@@ -31,7 +31,7 @@ routes     = []
 blueprints = []
 models     = []
 commands   = []
-hooks      = []
+hooks      = ["layout.authenticated_sidebar"]
 services   = []
 signals    = []
 translations = []
@@ -39,14 +39,14 @@ docker     = ["docker-compose.yml"]
 
 [tool.splent.contract.requires]
 features = []
-env_vars = ["MAILHOG_HOST", "MAILHOG_SMTP_PORT", "MAIL_DEFAULT_SENDER"]
+env_vars = ["MAILHOG_HOST", "MAILHOG_SMTP_PORT", "MAILHOG_UI_HOST_PORT", "MAIL_DEFAULT_SENDER"]
 signals  = []
 
 [tool.splent.contract.extensible]
 services  = []
 templates = []
 models    = []
-hooks     = []
+hooks     = ["layout.authenticated_sidebar"]
 routes    = false
 
 [tool.splent.contract.docker]
